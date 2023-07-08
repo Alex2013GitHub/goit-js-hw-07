@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
-
 const containerGalleryItems = document.querySelector('.gallery');
 
 const createGalleryMarkyp = galleryItems
@@ -15,14 +13,8 @@ const createGalleryMarkyp = galleryItems
   )
   .join('');
 containerGalleryItems.insertAdjacentHTML('beforeend', createGalleryMarkyp);
-containerGalleryItems.addEventListener('click', onClick);
 
-function onClick(event) {
-  event.preventDefault();
-
-  var gallery = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  gallery.open();
-}
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
